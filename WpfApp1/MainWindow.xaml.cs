@@ -11,6 +11,8 @@ using System.Windows.Shapes;
 using Panuon.WPF.UI;
 using Microsoft.Web.WebView2.Core;
 using System.Windows.Media.Animation;
+using Panuon.WPF;
+ 
 
 namespace WpfApp1
 {
@@ -87,5 +89,86 @@ namespace WpfApp1
 
             transform.BeginAnimation(TranslateTransform.XProperty, animation);
         }
+
+        #region  搜索按钮
+        //搜索按钮
+        private readonly List<string> _searchList = new List<string>()
+{
+    "https://www.cnxgct.com/video/wanmeishijieguoyu-chendong/HeoYwS5JsH.html",
+    "http://121.4.22.55/app/music/home",
+    "Slience - Before You Exit",
+    "Feels - WATTS/Khalid",
+    "Shotgun - Us The Duo"
+};
+        private void SchBox_Opened(object sender, System.EventArgs e)
+        {
+            var searchBox = sender as SearchBox;
+            searchBox.ItemsSource = _searchList.ToList();
+        }
+        private void SchBox_SearchTextChanged(object sender, SearchTextChangedRoutedEventArgs e)
+        {
+            var searchBox = sender as SearchBox;
+            var searchText = e.Text?.Trim()?.ToLower();
+
+            searchBox.ItemsSource = string.IsNullOrEmpty(searchText)
+            ? _searchList
+            : _searchList.Where(x => x.ToLower().Contains(searchText)).ToList();
+        }
+      
+            private void SchBox_ItemClick(object sender, RoutedEventArgs e)
+            {
+                var searchBox = sender as Panuon.WPF.UI.SearchBox;
+                if (searchBox == null) return;
+
+                string input = searchBox.Text?.Trim(); // 👈 关键：用 Text 而不是 SelectedItem
+
+                if (string.IsNullOrEmpty(input))
+                    return;
+
+                // 自动补全协议（如果需要）
+                if (!input.StartsWith("http://", StringComparison.OrdinalIgnoreCase) &&
+                    !input.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+                {
+                    input = "https://" + input;
+                }
+
+                try
+                {
+                    webView.Source = new Uri(input);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"无法加载网址：{ex.Message}", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        private void NavigateToUrl(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return;
+
+            // 自动补全协议
+            if (!input.StartsWith("http://", StringComparison.OrdinalIgnoreCase) &&
+                !input.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+            {
+                input = "https://" + input;
+            }
+
+            try
+            {
+                webView.Source = new Uri(input);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"无法加载网址：{ex.Message}", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToUrl(SchBox.Text?.Trim());
+        }
+ 
+        #endregion
+
+
     }
 }

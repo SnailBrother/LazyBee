@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "h/lnvJRklOm+ZJq9LU2R8mRnWZkpKNMotb/oI+KspB2gMgkdljCL1Yv54jG36ZI7OgOH+/A4rCSWBaXQ3vP7uw==",
+  "success": true,
+  "projectFilePath": "D:\\电脑软件\\OrionidTest\\6512\\new\\react-demo2.0\\LazyBee\\WpfApp1\\WpfApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.web.webview2\\1.0.3650.58\\microsoft.web.webview2.1.0.3650.58.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\panuon.wpf\\1.1.3\\panuon.wpf.1.1.3.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\panuon.wpf.ui\\1.3.0.2\\panuon.wpf.ui.1.3.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

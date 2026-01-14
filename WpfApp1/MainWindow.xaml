@@ -10,15 +10,70 @@
     Title=""
     Width="300"
     Height="400"
-    Topmost="True"
+    pu:WindowXCaption.Background="#222"
+    pu:WindowXCaption.Buttons="MinimizeClose"
+    pu:WindowXCaption.HeaderAlignment="Stretch"
     pu:WindowXCaption.Height="30"
-    pu:WindowXCaption.Background="LightPink"
     IsEscEnabled="True"
     IsF11Enabled="True"
     IsMaskVisible="False"
     IsOverlayerVisible="False"
+    Topmost="True"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
+    <pu:WindowXCaption.HeaderTemplate>
+        <DataTemplate>
+            <Border Background="#222">
+                <Button
+                    Width="120"
+                    Height="40"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    pu:ButtonHelper.CornerRadius="4"
+                    pu:ButtonHelper.Icon="&#xe9c1;"
+                    pu:IconHelper.FontFamily="{StaticResource PanuonIconFont}"
+                    pu:IconHelper.Margin="0,0,10,0"
+                    pu:ShadowHelper.BlurRadius="15"
+                    pu:ShadowHelper.ShadowDepth="5"
+                    Background="#222"
+                    Content="360浏览器"
+                    FontWeight="ExtraBold"
+                    Foreground="#FFFFFF" />
+
+            </Border>
+        </DataTemplate>
+    </pu:WindowXCaption.HeaderTemplate>
+
+    <pu:WindowXCaption.MinimizeButtonStyle>
+        <Style BasedOn="{StaticResource {x:Static pu:WindowXCaption.MinimizeButtonStyleKey}}" TargetType="Button">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="pu:ButtonHelper.HoverBackground" Value="{x:Null}" />
+            <Setter Property="pu:ButtonHelper.HoverForeground" Value="White" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Content" Value="&#xe903;" />
+        </Style>
+    </pu:WindowXCaption.MinimizeButtonStyle>
+
+    <!--<pu:WindowXCaption.MaximizeButtonStyle>
+        <Style BasedOn="{StaticResource {x:Static pu:WindowXCaption.MaximizeButtonStyleKey}}" TargetType="Button">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="pu:ButtonHelper.HoverBackground" Value="{x:Null}" />
+            <Setter Property="pu:ButtonHelper.HoverForeground" Value="White" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+    </pu:WindowXCaption.MaximizeButtonStyle>-->
+    <pu:WindowXCaption.CloseButtonStyle>
+        <Style BasedOn="{StaticResource {x:Static pu:WindowXCaption.CloseButtonStyleKey}}" TargetType="Button">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="pu:ButtonHelper.HoverBackground" Value="{x:Null}" />
+            <Setter Property="pu:ButtonHelper.HoverForeground" Value="White" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+    </pu:WindowXCaption.CloseButtonStyle>
+
+    <!--<pu:WindowXCaption.ExtendControl>
+        <Button />
+    </pu:WindowXCaption.ExtendControl>-->
     <!--  添加圆角窗体效果👇👇👇  -->
     <WindowChrome.WindowChrome>
         <WindowChrome
@@ -27,28 +82,125 @@
             ResizeBorderThickness="5" />
     </WindowChrome.WindowChrome>
     <!--  添加圆角窗体效果👆👆👆  -->
+
+
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
-            <RowDefinition Height="*" />
             <RowDefinition Height="60" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
         </Grid.RowDefinitions>
 
+
+        <Grid Grid.Row="0" Background="#222">
+            <!--  核心文字控件：拆分文字并分别设置样式  -->
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="48"
+                FontWeight="Bold">
+                <!--  1. "精品"：纯白色，无渐变  -->
+                <Run Foreground="White" Text="精品" />
+
+                <!--  2. "游戏推荐"：渐变填充  -->
+                <Run Text="游戏推荐">
+                    <Run.Foreground>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0.1" Color="#FFFFFF" />
+                            <!--  顶部浅色  -->
+                            <GradientStop Offset="0.9" Color="#FFA500" />
+                            <!--  底部橙色  -->
+                        </LinearGradientBrush>
+                    </Run.Foreground>
+                </Run>
+
+                <!--  统一给整个文字添加立体阴影效果  -->
+                <TextBlock.Effect>
+                    <DropShadowEffect
+                        BlurRadius="2"
+                        Direction="270"
+                        Opacity="0.8"
+                        ShadowDepth="3"
+                        Color="#000000" />
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <!--  文字整体描边（可选，保持和原图一致的白色外描边）  -->
+            <Path
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Data="{Binding ElementName=txtTitle, Path=RenderedGeometry}"
+                Stroke="#FFFFFF"
+                StrokeThickness="1" />
+        </Grid>
+
+        <Grid Grid.Row="1" Background="#1E2A5E">
+            <!--  内层 Grid 用于精确控制 SearchBox 和 Button 的相对位置  -->
+
+            <!--  SearchBox：去掉 Padding，改用 Margin 或内部留空  -->
+            <pu:SearchBox
+                x:Name="SchBox"
+                Height="35"
+                Padding="40,0,0,0"
+                pu:IconHelper.FontFamily="{StaticResource PanuonIconFont}"
+                pu:ShadowHelper.BlurRadius="15"
+                pu:ShadowHelper.Opacity="0.5"
+                pu:ShadowHelper.ShadowDepth="5"
+                Background="#1E2A5E"
+                BorderThickness="3"
+                CornerRadius="4"
+                FocusedShadowColor="#b18276"
+                Foreground="White"  
+                ItemClick="SchBox_ItemClick"
+                Opened="SchBox_Opened"
+                SearchTextChanged="SchBox_SearchTextChanged"
+                Watermark="传奇世界网页版官网">
+                <pu:SearchBox.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0" Color="#E8C070" />
+                        <GradientStop Offset="0.5" Color="#b18276" />
+                        <GradientStop Offset="1" Color="#9A6F5F" />
+                    </LinearGradientBrush>
+                </pu:SearchBox.BorderBrush>
+            </pu:SearchBox>
+
+
+            <Button
+                Width="40"
+                Height="35"
+                Margin="0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                pu:ButtonHelper.CornerRadius="4"
+                pu:ButtonHelper.Icon="&#xe928;"
+                pu:IconHelper.FontFamily="{StaticResource PanuonIconFont}"
+                pu:IconHelper.Margin="0,0,10,0"
+                Background="Transparent"
+                BorderThickness="0"
+                Click="SearchButton_Click"
+                Focusable="False"
+                Foreground="#FFFFFF"
+                IsTabStop="False" />
+
+        </Grid>
         <!--  顶部闪烁广告  -->
         <Border
+            Grid.Row="2"
             Margin="0"
-            Padding="20"
-            Grid.Row="0"
+            Padding="10"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Center"
             Background="LightPink">
             <TextBlock
                 x:Name="TopAdText"
+                Padding="10"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Cursor="Hand"
                 FontSize="18"
-                 Padding="10"
                 FontWeight="Bold"
                 Foreground="DarkRed"
                 MouseLeftButtonDown="TopAdText_MouseLeftButtonDown"
@@ -74,17 +226,17 @@
 
         <!--  WebView  -->
         <wv2:WebView2
-    x:Name="webView"
-    Grid.Row="1"
-    Margin="0"
-    VerticalAlignment="Stretch"
-    HorizontalAlignment="Stretch"
-    Source="https://www.cnxgct.com/video/wanmeishijieguoyu-chendong/HeoYwS5JsH.html" />
+            x:Name="webView"
+            Grid.Row="3"
+            Margin="0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Source="https://www.cnxgct.com/video/wanmeishijieguoyu-chendong/HeoYwS5JsH.html" />
 
         <!--  底部闪烁广告  -->
         <!--  底部循环滚动广告  -->
         <Border
-            Grid.Row="2"
+            Grid.Row="4"
             Padding="10"
             Background="#E6F9E6">
             <Canvas
