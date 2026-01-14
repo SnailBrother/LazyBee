@@ -87,11 +87,11 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60" />
-            <RowDefinition Height="60" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="30" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="30" />
         </Grid.RowDefinitions>
 
 
@@ -190,7 +190,7 @@
         <Border
             Grid.Row="2"
             Margin="0"
-            Padding="10"
+            Padding="0"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Center"
             Background="LightPink">
