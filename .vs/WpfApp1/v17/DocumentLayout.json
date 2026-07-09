@@ -1,0 +1,72 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\LazyBee - 2.0\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E524F456-CA49-46C2-9147-D733254A033D}|WpfApp1\\WpfApp1.csproj|c:\\users\\administrator\\desktop\\lazybee - 2.0\\wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E524F456-CA49-46C2-9147-D733254A033D}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E524F456-CA49-46C2-9147-D733254A033D}|WpfApp1\\WpfApp1.csproj|C:\\Users\\Administrator\\Desktop\\LazyBee - 2.0\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E524F456-CA49-46C2-9147-D733254A033D}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E524F456-CA49-46C2-9147-D733254A033D}|WpfApp1\\WpfApp1.csproj|C:\\Users\\Administrator\\Desktop\\LazyBee - 2.0\\wpfapp1\\wpfapp1.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{E524F456-CA49-46C2-9147-D733254A033D}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\wpfapp1.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WpfApp1",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\LazyBee - 2.0\\WpfApp1\\WpfApp1.csproj",
+              "RelativeDocumentMoniker": "WpfApp1\\WpfApp1.csproj",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\LazyBee - 2.0\\WpfApp1\\WpfApp1.csproj",
+              "RelativeToolTip": "WpfApp1\\WpfApp1.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-09T02:01:19.985Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\LazyBee - 2.0\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\LazyBee - 2.0\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml.cs",
+              "ViewState": "AQIAALsBAAAAAAAAAAAIwOUBAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-08T07:27:45.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\LazyBee - 2.0\\WpfApp1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\LazyBee - 2.0\\WpfApp1\\MainWindow.xaml",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-08T07:27:42.933Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

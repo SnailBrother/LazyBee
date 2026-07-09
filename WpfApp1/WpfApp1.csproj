@@ -9,8 +9,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Images\head.ico" />
+    <None Remove="Resources\Images\head_highlight.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="H.NotifyIcon.Wpf" Version="2.4.1" />
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3650.58" />
     <PackageReference Include="Panuon.WPF.UI" Version="1.3.0.2" />
+    <PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\head.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\head_highlight.ico" />
   </ItemGroup>
 
 </Project>

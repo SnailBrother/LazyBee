@@ -7,27 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="ConfirmDialog.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="InputDialog.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UrlInputDialog.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="ConfirmDialog.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="InputDialog.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UrlInputDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
